@@ -1,17 +1,42 @@
-(wdw :World {name: "Walt Disney World"})
-(mk :Park {name: "Magic Kingdom"})-[:in]->(wdw)
-(msu :Land {name: "Main Street, U.S.A."})-[:in]->(mk)
-(wdwrr :Transportation {name: "Walt Disney World Railroad"})-[:in]->(msu)
-(:Service {name: "City Hall"})-[:in]->(msu)
-(:Game {name: "Sorcerers of the Magic Kingdom"})-[:in]->(msu)
-(:Service {name: "Harmony Barber Shop"})-[:in]->(msu)
-(:Meet-and-Greet {name: "Town Square Theater"})-[:in]->(msu)
-(:Dining {name: "Tony's Town Square Restaurant"})-[:in]->(msu)
-(:Dining {name: "Main Street Bakery"})-[:in]->(msu)
-(:Dining {name: "Plaza Ice Cream Parlor"})-[:in]->(msu)
-(:Dining {name: "The Plaza Restaurant"})-[:in]->(msu)
-(:Dining {name: "Casey's Corner"})-[:in]->(msu)
-(:Dining {name: "Crystal Palace, A Buffet with Character"})-[:in]->(msu)
-(:Shopping {name: "Main Street Chamber of Commerce"})-[:in]->(msu)
-(:Shopping {name: "Emporium"})-[:in]->(msu)
-(:Shopping {name: "Uptown Jewelers"})-[:in]->(msu)
+match (mk :Park {name: "Magic Kingdom"})
+//------------------------------------------------------------------------------
+create (msu :Land {name: "Main Street, U.S.A."})-[:in]->(mk),
+(wdwrr :Transportation {name: "Walt Disney World Railroad"})-[:in]->(msu),
+(:Service {name: "City Hall"})-[:in]->(msu),
+(:Game {name: "Sorcerers of the Magic Kingdom"})-[:in]->(msu),
+(:Service {name: "Harmony Barber Shop"})-[:in]->(msu),
+(:Meet_and_Greet {name: "Town Square Theater"})-[:in]->(msu),
+(:Dining {name: "Tony's Town Square Restaurant"})-[:in]->(msu),
+(:Dining {name: "Main Street Bakery"})-[:in]->(msu),
+(:Dining {name: "Plaza Ice Cream Parlor"})-[:in]->(msu),
+(:Dining {name: "The Plaza Restaurant"})-[:in]->(msu),
+(:Dining {name: "Casey's Corner"})-[:in]->(msu),
+(:Dining {name: "Crystal Palace, A Buffet with Character"})-[:in]->(msu),
+(:Shopping {name: "Main Street Chamber of Commerce"})-[:in]->(msu),
+(:Shopping {name: "Emporium"})-[:in]->(msu),
+(:Shopping {name: "Uptown Jewelers"})-[:in]->(msu),
+//------------------------------------------------------------------------------
+(al :Land {name: "Adventureland"})-[:in]->(mk),
+(:Walkthrough {name: "Swiss Family Treehouse"})-[:in]->(al),
+(:Ride {name: "The Magic Carpets of Aladdin"})-[:in]->(al),
+(:Ride {name: "Jungle Cruise"})-[:in]->(al),
+(:Show {name: "Walt Disney's Enchanted Tiki Room"})-[:in]->(al),
+(:Ride {name: "Pirates of the Caribbean"})-[:in]->(al),
+(:Game {name: "A Pirate's Adventure ~ Treasures of the Seven Seas"})-[:in]->(al),
+(:Dining {name: "Sunshine Tree Terrace"})-[:in]->(al),
+(:Dining {name: "Jungle Navigation Co. Ltd. Skipper Canteen"})-[:in]->(al),
+(:Dining {name: "Aloha Isle"})-[:in]->(al),
+(:Dining {name: "Tortuga Tavern"})-[:in]->(al),
+(:Service {name: "The Pirates League"})-[:in]->(al),
+//------------------------------------------------------------------------------
+(fl :Land {name: "Frontierland"})-[:in]->(mk),
+(:Ride {name: "Splash Mountain"})-[:in]->(fl),
+(wdwrr)-[:in]->(fl),
+(:Walkthrough {name: "Tom Sawyer Island"})-[:in]->(fl),
+(:Show {name: "Country Bear Jamboree"})-[:in]->(fl),
+(:Dining {name: "Golden Oak Outpost"})-[:in]->(fl),
+(:Dining {name: "Pecos Bill Tall Tale Inn and Cafe"})-[:in]->(fl),
+(:Dining {name: "Westward Ho"})-[:in]->(fl),
+(:Shopping {name: "Frontier Trading Post"})-[:in]->(fl),
+//------------------------------------------------------------------------------
+(ls :Land {name: "Liberty Square"})-[:in]->(mk),
