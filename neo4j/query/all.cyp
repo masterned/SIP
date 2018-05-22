@@ -1,4 +1,4 @@
 // matches all relationships for display
 match
-  q=()-[]-()
+  q=()-[]->()
 return q;

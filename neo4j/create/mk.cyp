@@ -72,7 +72,7 @@ create
   (:Walkthrough {name: "Casey Jr. Slash 'N' Soak Station"})-[:in]->(sc),
   (:Ride {name: "The Barnstormer"})-[:in]->(sc),
   (:Ride {name: "Bumbo the Flying Elephant"})-[:in]->(sc),
-  (:Shopping {name: "Bog Top Souvenirs"})-[:in]->(sc),
+  (:Shopping {name: "Big Top Souvenirs"})-[:in]->(sc),
   //----------------------------------------------------------------------------
   (cc :Section {name: "Castle Courtyard"})-[:in]->(fal),
   (:Ride {name: "Prince Charming Regal Carrousel"})-[:in]->(cc),
