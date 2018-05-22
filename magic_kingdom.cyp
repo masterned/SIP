@@ -84,4 +84,17 @@ create (msu :Land {name: "Main Street, U.S.A."})-[:in]->(mk),
 (:Dining {name: "The Friar's Nook"})-[:in]->(cc),
 (:Service {name: "Bibbidi Bobbidi Boutique"})-[:in]->(cc),
 //------------------------------------------------------------------------------
-(tl :Land {name: "Tomorrowland"})-[:in]->(mk)
+(tl :Land {name: "Tomorrowland"})-[:in]->(mk),
+(:Show {name: "Monsters, Inc. Laugh Floor"})-[:in]->(tl),
+(:Ride {name: "Tomorrowland Speedway"})-[:in]->(tl),
+(:Ride {name: "Space Mountain"})-[:in]->(tl),
+(:Ride {name: "Astro Orbiter"})-[:in]->(tl),
+(:Ride {name: "Tomorrowland Transit Authority PeopleMover"})-[:in]->(tl),
+(:Ride {name: "Walt Disney's Carousel of Progress"})-[:in]->(tl),
+(:Ride {name: "Buzz Lightyear's Space Ranger Spin"})-[:in]->(tl),
+(:Dining {name: "Cosmic Ray's Starlight Cafe"})-[:in]->(tl),
+(:Dining {name: "Auntie Gravity's Galactic Goodies"})-[:in]->(tl),
+(:Dining {name: "Cool Ship"})-[:in]->(tl),
+(:Dining {name: "The Lunching Pad"})-[:in]->(tl),
+(:Dining {name: "Tomorrowland Terrace Restaurant"})-[:in]->(tl),
+(:Shopping {name: "Merchant of Venus"})-[:in]->(tl)
