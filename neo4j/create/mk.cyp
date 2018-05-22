@@ -1,12 +1,5 @@
 match
   (mk :Park {name: "Magic Kingdom"})
-// (l :Land)-[r1]->(mk)
-// with l, r1
-// optional match (l)<-[r2]-(s :Section),
-// (s)<-[r3]-(x),
-// (l)<-[r4]-(y)
-// delete r4,r3,r2,y,x,s,r1,l
-
 create
   (msu :Land {name: "Main Street, U.S.A."})-[:in]->(mk),
   (wdwrr :Transportation {name: "Walt Disney World Railroad"})-[:in]->(msu),
@@ -105,4 +98,4 @@ create
   (:Dining {name: "Cool Ship"})-[:in]->(tl),
   (:Dining {name: "The Lunching Pad"})-[:in]->(tl),
   (:Dining {name: "Tomorrowland Terrace Restaurant"})-[:in]->(tl),
-  (:Shopping {name: "Merchant of Venus"})-[:in]->(tl)
+  (:Shopping {name: "Merchant of Venus"})-[:in]->(tl);
