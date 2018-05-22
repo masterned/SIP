@@ -1,5 +1,5 @@
 match (mk :Park {name: "Magic Kingdom"})
-//------------------------------------------------------------------------------
+//==============================================================================
 create (msu :Land {name: "Main Street, U.S.A."})-[:in]->(mk),
 (wdwrr :Transportation {name: "Walt Disney World Railroad"})-[:in]->(msu),
 (:Service {name: "City Hall"})-[:in]->(msu),
@@ -15,7 +15,7 @@ create (msu :Land {name: "Main Street, U.S.A."})-[:in]->(mk),
 (:Shopping {name: "Main Street Chamber of Commerce"})-[:in]->(msu),
 (:Shopping {name: "Emporium"})-[:in]->(msu),
 (:Shopping {name: "Uptown Jewelers"})-[:in]->(msu),
-//------------------------------------------------------------------------------
+//==============================================================================
 (al :Land {name: "Adventureland"})-[:in]->(mk),
 (:Walkthrough {name: "Swiss Family Treehouse"})-[:in]->(al),
 (:Ride {name: "The Magic Carpets of Aladdin"})-[:in]->(al),
@@ -28,7 +28,7 @@ create (msu :Land {name: "Main Street, U.S.A."})-[:in]->(mk),
 (:Dining {name: "Aloha Isle"})-[:in]->(al),
 (:Dining {name: "Tortuga Tavern"})-[:in]->(al),
 (:Service {name: "The Pirates League"})-[:in]->(al),
-//------------------------------------------------------------------------------
+//==============================================================================
 (fl :Land {name: "Frontierland"})-[:in]->(mk),
 (:Ride {name: "Splash Mountain"})-[:in]->(fl),
 (wdwrr)-[:in]->(fl),
@@ -38,7 +38,7 @@ create (msu :Land {name: "Main Street, U.S.A."})-[:in]->(mk),
 (:Dining {name: "Pecos Bill Tall Tale Inn and Cafe"})-[:in]->(fl),
 (:Dining {name: "Westward Ho"})-[:in]->(fl),
 (:Shopping {name: "Frontier Trading Post"})-[:in]->(fl),
-//------------------------------------------------------------------------------
+//==============================================================================
 (ls :Land {name: "Liberty Square"})-[:in]->(mk),
 (:Show {name: "Hall of Presidents"})-[:in]->(ls),
 (:Ride {name: "Liberty Square Riverboat"})-[:in]->(ls),
@@ -48,9 +48,9 @@ create (msu :Land {name: "Main Street, U.S.A."})-[:in]->(mk),
 (:Dining {name: "Sleepy Hollow"})-[:in]->(ls),
 (:Dining {name: "Liberty Square Market"})-[:in]->(ls),
 (:Dining {name: "Columbia Harbour House"})-[:in]->(ls),
-//------------------------------------------------------------------------------
+//==============================================================================
 (fal :Land {name: "Fantasyland"})-[:in]->(mk),
-//..............................................................................
+//------------------------------------------------------------------------------
 (ef :Section {name: "Enchanted Forest"})-[:in]->(fal),
 (:Meet_and_Greet {name: "Enchanted Tales with Belle"})-[:in]->(ef),
 (:Ride {name: "Under the Sea~Journey of the Little Mermaid"})-[:in]->(ef),
@@ -64,7 +64,7 @@ create (msu :Land {name: "Main Street, U.S.A."})-[:in]->(mk),
 (:Dining {name: "Prince Eric's Village Market"})-[:in]->(ef),
 (:Dining {name: "Cheshire Cafe"})-[:in]->(ef),
 (:Dining {name: "Storybook Treats"})-[:in]->(ef),
-//..............................................................................
+//------------------------------------------------------------------------------
 (sc :Section {name: "Storybook Circus"})-[:in]->(fal),
 (:Meet_and_Greet {name: "Pete's Silly Slideshow"})-[:in]->(sc),
 (wdwrr)-[:in]->(sc),
@@ -72,7 +72,7 @@ create (msu :Land {name: "Main Street, U.S.A."})-[:in]->(mk),
 (:Ride {name: "The Barnstormer"})-[:in]->(sc),
 (:Ride {name: "Bumbo the Flying Elephant"})-[:in]->(sc),
 (:Shopping {name: "Bog Top Souvenirs"})-[:in]->(sc),
-//..............................................................................
+//------------------------------------------------------------------------------
 (cc :Section {name: "Castle Courtyard"})-[:in]->(fal),
 (:Ride {name: "Prince Charming Regal Carrousel"})-[:in]->(cc),
 (:Show {name: "Mickey's PhilharMagic"})-[:in]->(cc),
@@ -83,7 +83,7 @@ create (msu :Land {name: "Main Street, U.S.A."})-[:in]->(mk),
 (:Dining {name: "Pinocchio Village Haus"})-[:in]->(cc),
 (:Dining {name: "The Friar's Nook"})-[:in]->(cc),
 (:Service {name: "Bibbidi Bobbidi Boutique"})-[:in]->(cc),
-//------------------------------------------------------------------------------
+//==============================================================================
 (tl :Land {name: "Tomorrowland"})-[:in]->(mk),
 (:Show {name: "Monsters, Inc. Laugh Floor"})-[:in]->(tl),
 (:Ride {name: "Tomorrowland Speedway"})-[:in]->(tl),
