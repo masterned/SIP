@@ -12,3 +12,5 @@
   > A neo4j database of the Walt Disney World Parks with all of their attractions, entertainment, dining, etc. as an example of the usability of the semantic web.
 
   > The structure of the semantic web - as proposed by Tim Berners-Lee - closely resembles the structure of a graph database. With the use of a graph database system (such as neo4j), displaying the inner-workings and possibilities of the semantic web is simplified.
+
+  > _author note: this branch, I decided to split the folders by category instead of by park for better organization_
