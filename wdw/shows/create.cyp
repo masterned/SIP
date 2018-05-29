@@ -7,8 +7,9 @@ create
     //-----Liberty Square-------------------------------------------------------
     (:Show { name: 'Hall of Presidents' })-[:in]->(ls),
     //-----Fantasyland----------------------------------------------------------
+      //.....Enchanted Forest...................................................
+      (:Show { name: 'Enchanted Tales with Belle' })-[:in]->(ef),
       //.....Castle Courtyard...................................................
       (:Show { name: 'Mickey\'s PhilharMagic' })-[:in]->(cc),
     //-----Tomorrowland---------------------------------------------------------
     (:Show { name: 'Monsters, Inc. Laugh Floor' })-[:in]->(tl),
-    
