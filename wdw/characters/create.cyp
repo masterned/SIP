@@ -2,7 +2,7 @@ match
   (msu:Land { name: 'Main Street, U.S.A.' }),
   // (smk:InteractiveAdventure { name: 'Sorcerers of the Magic Kingdom' }),
   (tst:Meet_and_Greet { name: 'Town Square Theater'}),
-  // (tcp:Dining { name: 'The Crystal Palace, A Buffet with Character'}),
+  (tcp:Dining { name: 'The Crystal Palace, A Buffet with Character'}),
   (mca:Ride {name: 'The Magic Carpets of Aladdin'}),
   (etb:Show { name: 'Enchanted Tales with Belle' }),
   (mag:Meet_and_Greet { name: 'Meet Ariel in Her Grotto' }),
@@ -19,11 +19,16 @@ match
 create
   (:Character { name: 'Pluto' })<-[:features { can_meet: true, start_time: '9:05', end_time: '14:00' }]-(msu),
   //----------------------------------------------------------------------------
-  (ald:Character { name: 'Aladdin' })<-[:features { can_meet: true, start_time: '9:30', end_time: '17:10' }]-(mca),
-  (jsm:Character { name: 'Princess Jasmine' })<-[:features { can_meet: true, start_time: '9:30', end_time: '17:10' }]-(mca),
-  //----------------------------------------------------------------------------
   (mkm:Character { name: 'Mickey Mouse' })<-[:features { can_meet: true }]-(tst),
   (:Character { name: 'Tinker Bell' })<-[:features { can_meet: true }]-(tst),
+  //----------------------------------------------------------------------------
+  (:Character { name: 'Winnie the Pooh' })<-[:features { can_meet: true }]-(tcp),
+  (:Character { name: 'Eeyore' })<-[:features { can_meet: true }]-(tcp),
+  (:Character { name: 'Piglet' })<-[:features { can_meet: true }]-(tcp),
+  (:Character { name: 'Tigger' })<-[:features { can_meet: true }]-(tcp),
+  //----------------------------------------------------------------------------
+  (ald:Character { name: 'Aladdin' })<-[:features { can_meet: true, start_time: '9:30', end_time: '17:10' }]-(mca),
+  (jsm:Character { name: 'Princess Jasmine' })<-[:features { can_meet: true, start_time: '9:30', end_time: '17:10' }]-(mca),
   //----------------------------------------------------------------------------
   (:Character { name: 'Belle' })<-[:features { can_meet: true }]-(etb),
   //----------------------------------------------------------------------------
