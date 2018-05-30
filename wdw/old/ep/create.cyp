@@ -2,11 +2,8 @@ match
   (ep:Park { name: 'Epcot' })
 create
   (fwe:Land { name: 'Future World East' })-[:in]->(ep),
-  (:Ride { name: 'Spaceship Earth' })-[:in]->(fwe),
   (:Game { name: 'Project Tomorrow: Inventing the Wonders of the Future' })-[:in]->(fwe),
-  (:Ride { name: 'Mission: SPACE' })-[:in]->(fwe),
   (:Game { name: 'Advanced Training Lab' })-[:in]->(fwe),
-  (:Ride { name: 'Test Track' })-[:in]->(fwe),
   //----------------------------------------------------------------------------
   (inv:Section { name: 'Innoventions' })-[:in]->(fwe),
     (:Game { name: 'COLORTOPIA' })-[:in]->(inv),
@@ -24,19 +21,15 @@ create
   (:Shopping { name: 'Club Cool' })-[:in]->(fww),
   //----------------------------------------------------------------------------
   (sea:Section { name: 'The Seas with Nemo & Friends' })-[:in]->(fww),
-  (:Ride { name: 'The Seas with Nemo and Friends Attraction' })-[:in]->(sea),
   (:Show { name: 'Turtle Talk With Crush' })-[:in]->(sea),
   (:Walkthrough { name: 'SeaBase' })-[:in]->(sea),
   (:Dining { name: 'Coral Reef Restaurant' })-[:in]->(sea),
   //----------------------------------------------------------------------------
   (land:Section { name: 'The Land' })-[:in]->(fww),
-  (:Ride { name: 'Soarin\'' })-[:in]->(land),
-  (:Ride { name: 'Living with the Land' })-[:in]->(land),
   (:Dining { name: 'Sunshine Seasons' })-[:in]->(land),
   (:Dining { name: 'Chip \'n\' Dale\'s Harvest Feast at The Garden Grill' })-[:in]->(land),
   //----------------------------------------------------------------------------
   (img:Section { name: 'Imagination!' })-[:in]->(fww),
-  (:Ride { name: 'Journey Into Imagination With Figment' })-[:in]->(fww),
   (:Game { name: 'ImageWorks' })-[:in]->(fww),
   (:Show { name: 'Disney & Pixar Short Filem Festival' })-[:in]->(fww),
 //==============================================================================
@@ -46,7 +39,6 @@ create
   (ws:Land { name: 'World Showcase' })-[:in]->(ep),
   //----------------------------------------------------------------------------
   (mx:Section { name: 'Mexico' })-[:in]->(ws),
-  (:Ride { name: 'Gran Fietsa Tour Starring The Three Caballeros' })-[:in]->(mx),
   (:Dining { name: 'Choza de Margarita' })-[:in]->(mx),
   (:Dining { name: 'San Angel Inn Restaurante' })-[:in]->(mx),
   (:Dining { name: 'La Hacienda de San Angel' })-[:in]->(mx),
@@ -55,7 +47,6 @@ create
   //----------------------------------------------------------------------------
   (nr:Section { name: 'Norway' })-[:in]->(ws),
   (:Meet_and_Greet { name: 'Meet Anna and Elsa at Royal Sommerhus'})-[:in]->(nr),
-  (:Ride { name: 'Frozen Ever After' })-[:in]->(nr),
   (:Dining { name: 'Princess Storybook Dining at Akershus Royal Banquet Hall' })-[:in]->(nr),
   (:Dining { name: 'Kringla Bakeri Og Kafe' })-[:in]->(nr),
   //----------------------------------------------------------------------------
