@@ -1,7 +1,26 @@
 create
   //=====Animal Kingdom=========================================================
   //=====Epcot==================================================================
-    
+    (:Land { name: 'Future World East' })-[:in]->(ep),
+      (:Section { name: 'Innoventions' })-[:in]->(fwe),
+    (:Land { name: 'Future World West' })-[:in]->(ep),
+      (:Section { name: 'The Seas with Nemo & Friends' })-[:in]->(fww),
+      (:Section { name: 'The Land' })-[:in]->(fww),
+      (:Section { name: 'Imagination!' })-[:in]->(fww),
+    (:Land { name: 'Showcase Plaza' })-[:in]->(ep),
+    (:Land { name: 'World Showcase' })-[:in]->(ep),
+      (:Section { name: 'Mexico' })-[:in]->(ws),
+      (:Section { name: 'Norway' })-[:in]->(ws),
+      (:Section { name: 'China' })-[:in]->(ws),
+      (:Section { name: 'Germany' })-[:in]->(ws),
+      (:Section { name: 'Italy' })-[:in]->(ws),
+      (:Section { name: 'The American Adventure' })-[:in]->(ws),
+      (:Section { name: 'Japan' })-[:in]->(ws),
+      (:Section { name: 'Morocco' })-[:in]->(ws),
+      (:Section { name: 'France' })-[:in]->(ws),
+      (:Section { name: 'International Gateway' })-[:in]->(ws),
+      (:Section { name: 'United Kingdom' })-[:in]->(ws),
+      (:Section { name: 'Canada' })-[:in]->(ws),
   //=====Hollywood Studios======================================================
   //=====Magic Kingdom==========================================================
     (msu:Land { name: 'Main Street, U.S.A.' })-[:in]->(mk),
