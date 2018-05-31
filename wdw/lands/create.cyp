@@ -1,13 +1,18 @@
+match
+  (ak:Park {name: "Animal Kingdom"}),
+  (ep:Park {name: "Epcot"}),
+  (hs:Park {name: "Hollywood Studios"}),
+  (mk:Park {name: "Magic Kingdom"})
 create
   //=====Animal Kingdom=========================================================
   //=====Epcot==================================================================
-    (:Land { name: 'Future World' })-[:in]->(ep),
-      (:Section { name: 'Imagination!' })-[:in]->(fww),
-      (:Section { name: 'Innoventions' })-[:in]->(fwe),
-      (:Section { name: 'The Seas with Nemo & Friends' })-[:in]->(fww),
-      (:Section { name: 'The Land' })-[:in]->(fww),
-    (:Land { name: 'Showcase Plaza' })-[:in]->(ep),
-    (:Land { name: 'World Showcase' })-[:in]->(ep),
+    (fw:Land { name: 'Future World' })-[:in]->(ep),
+      (:Section { name: 'Imagination!' })-[:in]->(fw),
+      (:Section { name: 'Innoventions' })-[:in]->(fw),
+      (:Section { name: 'The Seas with Nemo & Friends' })-[:in]->(fw),
+      (:Section { name: 'The Land' })-[:in]->(fw),
+    (sp:Land { name: 'Showcase Plaza' })-[:in]->(ep),
+    (ws:Land { name: 'World Showcase' })-[:in]->(ep),
       (:Section { name: 'Mexico' })-[:in]->(ws),
       (:Section { name: 'Norway' })-[:in]->(ws),
       (:Section { name: 'China' })-[:in]->(ws),
@@ -26,8 +31,8 @@ create
     (:Land { name: 'Adventureland' })-[:in]->(mk),
     (:Land { name: 'Frontierland' })-[:in]->(mk),
     (:Land { name: 'Liberty Square' })-[:in]->(mk),
-    (:Land { name: 'Fantasyland' })-[:in]->(mk),
+    (fal:Land { name: 'Fantasyland' })-[:in]->(mk),
       (:Section { name: 'Enchanted Forest' })-[:in]->(fal),
       (:Section { name: 'Storybook Circus' })-[:in]->(fal),
       (:Section { name: 'Castle Courtyard' })-[:in]->(fal),
-    (:Land { name: 'Tomorrowland' })-[:in]->(mk),
+    (:Land { name: 'Tomorrowland' })-[:in]->(mk);

@@ -1,3 +1,16 @@
+match
+  //=====Animal Kingdom=========================================================
+  //=====Epcot==================================================================
+  //=====Hollywood Studios======================================================
+  //=====Magic Kingdom==========================================================
+  (:Land { name: 'Adventureland' })-[:in]->(mk),
+  (:Land { name: 'Frontierland' })-[:in]->(mk),
+  (fal:Land { name: 'Fantasyland' })-[:in]->(mk),
+    (:Section { name: 'Castle Courtyard' })-[:in]->(fal),
+    (:Section { name: 'Enchanted Forest' })-[:in]->(fal),
+    (:Section { name: 'Storybook Circus' })-[:in]->(fal),
+  (:Land { name: 'Liberty Square' })-[:in]->(mk),
+  (:Land { name: 'Tomorrowland' })-[:in]->(mk)
 create
   //=====Animal Kingdom=========================================================
     //-----Africa---------------------------------------------------------------
