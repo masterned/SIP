@@ -19,6 +19,7 @@ create
   //=====Magic Kingdom==========================================================
     //-----Adventureland--------------------------------------------------------
       (:Show { name: 'Walt Disney\'s Enchanted Tiki Room' })-[:in]->(al),
+      (:Show { name: 'Captain Jack Sarrow\'s Pirate Tutorial' })-[:in]->(al),
     //-----Frontierland---------------------------------------------------------
       (:Show { name: 'Country Bear Jamboree' })-[:in]->(fl),
     //-----Liberty Square-------------------------------------------------------

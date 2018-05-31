@@ -17,3 +17,5 @@ create
       (:Interactive { name: 'Sorcerers of the Magic Kingdom' })-[:in]->(msu),
     //-----Adventureland--------------------------------------------------------
       (:Interactive { name: 'A Pirate\'s Adventure ~ Treasures of the Seven Seas' })-[:in]->(al),
+    //-----Frontierland---------------------------------------------------------
+      (:Interactive { name: 'Frontierland Shootin\' Arcade' })-[:in]->(fl),

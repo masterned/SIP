@@ -11,7 +11,7 @@ create
       (:Meet_and_Greet { name: 'Town Square Theater' })-[:in]->(msu),
     //-----Fantasyland----------------------------------------------------------
       //.....Enchanted Forest...................................................
-        (:Meet_and_Greet { name: 'Meet Ariel in Her Grotto' })-[:in]->(ef),
+        (:Meet_and_Greet { name: 'Ariel\'s Grotto' })-[:in]->(ef),
         (:Meet_and_Greet { name: 'Princess Fairytale Hall' })-[:in]->(ef),
       //.....Storybook Circus...................................................
         (:Meet_and_Greet { name: 'Pete\'s Silly Slideshow' })-[:in]->(sc),
