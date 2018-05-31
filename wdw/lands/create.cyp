@@ -1,12 +1,11 @@
 create
   //=====Animal Kingdom=========================================================
   //=====Epcot==================================================================
-    (:Land { name: 'Future World East' })-[:in]->(ep),
+    (:Land { name: 'Future World' })-[:in]->(ep),
+      (:Section { name: 'Imagination!' })-[:in]->(fww),
       (:Section { name: 'Innoventions' })-[:in]->(fwe),
-    (:Land { name: 'Future World West' })-[:in]->(ep),
       (:Section { name: 'The Seas with Nemo & Friends' })-[:in]->(fww),
       (:Section { name: 'The Land' })-[:in]->(fww),
-      (:Section { name: 'Imagination!' })-[:in]->(fww),
     (:Land { name: 'Showcase Plaza' })-[:in]->(ep),
     (:Land { name: 'World Showcase' })-[:in]->(ep),
       (:Section { name: 'Mexico' })-[:in]->(ws),
@@ -23,12 +22,12 @@ create
       (:Section { name: 'Canada' })-[:in]->(ws),
   //=====Hollywood Studios======================================================
   //=====Magic Kingdom==========================================================
-    (msu:Land { name: 'Main Street, U.S.A.' })-[:in]->(mk),
-    (al:Land { name: 'Adventureland' })-[:in]->(mk),
-    (fl:Land { name: 'Frontierland' })-[:in]->(mk),
-    (ls:Land { name: 'Liberty Square' })-[:in]->(mk),
-    (fal:Land { name: 'Fantasyland' })-[:in]->(mk),
-      (ef:Section { name: 'Enchanted Forest' })-[:in]->(fal),
-      (sc:Section { name: 'Storybook Circus' })-[:in]->(fal),
-      (cc:Section { name: 'Castle Courtyard' })-[:in]->(fal),
-    (tl:Land { name: 'Tomorrowland' })-[:in]->(mk),
+    (:Land { name: 'Main Street, U.S.A.' })-[:in]->(mk),
+    (:Land { name: 'Adventureland' })-[:in]->(mk),
+    (:Land { name: 'Frontierland' })-[:in]->(mk),
+    (:Land { name: 'Liberty Square' })-[:in]->(mk),
+    (:Land { name: 'Fantasyland' })-[:in]->(mk),
+      (:Section { name: 'Enchanted Forest' })-[:in]->(fal),
+      (:Section { name: 'Storybook Circus' })-[:in]->(fal),
+      (:Section { name: 'Castle Courtyard' })-[:in]->(fal),
+    (:Land { name: 'Tomorrowland' })-[:in]->(mk),
