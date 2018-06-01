@@ -35,12 +35,12 @@ create
     (:Land { name: 'Sunset Boulevard' })-[:in]->(hs),
     (:Land { name: 'Toy Story Land' })-[:in]->(hs),
   //=====Magic Kingdom==========================================================
-    (:Land { name: 'Main Street, U.S.A.' })-[:in]->(mk),
     (:Land { name: 'Adventureland' })-[:in]->(mk),
-    (:Land { name: 'Frontierland' })-[:in]->(mk),
-    (:Land { name: 'Liberty Square' })-[:in]->(mk),
     (fal:Land { name: 'Fantasyland' })-[:in]->(mk),
+      (:Section { name: 'Castle Courtyard' })-[:in]->(fal),
       (:Section { name: 'Enchanted Forest' })-[:in]->(fal),
       (:Section { name: 'Storybook Circus' })-[:in]->(fal),
-      (:Section { name: 'Castle Courtyard' })-[:in]->(fal),
+    (:Land { name: 'Frontierland' })-[:in]->(mk),
+    (:Land { name: 'Liberty Square' })-[:in]->(mk),
+    (:Land { name: 'Main Street, U.S.A.' })-[:in]->(mk),
     (:Land { name: 'Tomorrowland' })-[:in]->(mk);
