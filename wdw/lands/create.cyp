@@ -5,13 +5,17 @@ match
   (mk:Park {name: "Magic Kingdom"})
 create
   //=====Animal Kingdom=========================================================
+    (:Land { name: 'Africa' })-[:in]->(ak),
+    (:Land { name: 'Asia' })-[:in]->(ak),
+    (:Land { name: 'DinoLand U.S.A.' })-[:in]->(ak),
+    (:Land { name: 'Pandora - The World of Avatar' })-[:in]->(ak),
   //=====Epcot==================================================================
     (fw:Land { name: 'Future World' })-[:in]->(ep),
       (:Section { name: 'Imagination!' })-[:in]->(fw),
       (:Section { name: 'Innoventions' })-[:in]->(fw),
       (:Section { name: 'The Seas with Nemo & Friends' })-[:in]->(fw),
       (:Section { name: 'The Land' })-[:in]->(fw),
-    (sp:Land { name: 'Showcase Plaza' })-[:in]->(ep),
+    (:Land { name: 'Showcase Plaza' })-[:in]->(ep),
     (ws:Land { name: 'World Showcase' })-[:in]->(ep),
       (:Section { name: 'Mexico' })-[:in]->(ws),
       (:Section { name: 'Norway' })-[:in]->(ws),

@@ -1,5 +1,9 @@
 match
   //=====Animal Kingdom=========================================================
+    (afr:Land { name: 'Africa' }),
+    (asa:Land { name: 'Asia' }),
+    (dlu:Land { name: 'DinoLand U.S.A.' }),
+    (pwa:Land { name: 'Pandora - The World of Avatar' }),
   //=====Epcot==================================================================
   (fw:Land { name: 'Future World' }),
     (img:Section { name: 'Imagination!' }),
@@ -22,17 +26,17 @@ create
   (test:Test { name: 'test'}),
   //=====Animal Kingdom=========================================================
     //-----Africa---------------------------------------------------------------
-      (:Ride { name: 'Kilimanjaro Safaris' })-[:in]->(test),
+      (:Ride { name: 'Kilimanjaro Safaris' })-[:in]->(afr),
     //-----Asia-----------------------------------------------------------------
-      (:Ride { name: 'Expedition Everest - Legend of the Forbidden Mountain' })-[:in]->(test),
-      (:Ride { name: 'Kali River Rapids' })-[:in]->(test),
+      (:Ride { name: 'Expedition Everest - Legend of the Forbidden Mountain' })-[:in]->(asa),
+      (:Ride { name: 'Kali River Rapids' })-[:in]->(asa),
     //-----DinoLand U.S.A.------------------------------------------------------
-      (:Ride { name: 'DINOSAUR' })-[:in]->(test),
-      (:Ride { name: 'Primeval Whirl' })-[:in]->(test),
-      (:Ride { name: 'TriceraTop Spin' })-[:in]->(test),
+      (:Ride { name: 'DINOSAUR' })-[:in]->(dlu),
+      (:Ride { name: 'Primeval Whirl' })-[:in]->(dlu),
+      (:Ride { name: 'TriceraTop Spin' })-[:in]->(dlu),
     //-----Pandora - The World of Avatar----------------------------------------
-      (:Ride { name: 'Avatar Flight of Passage' })-[:in]->(test),
-      (:Ride { name: 'Na\'vi River Journey' })-[:in]->(test),
+      (:Ride { name: 'Avatar Flight of Passage' })-[:in]->(pwa),
+      (:Ride { name: 'Na\'vi River Journey' })-[:in]->(pwa),
   //=====Epcot==================================================================
     //-----Future World---------------------------------------------------------
       (:Ride { name: 'Mission: SPACE' })-[:in]->(fw),
