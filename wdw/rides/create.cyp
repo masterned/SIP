@@ -5,13 +5,13 @@ match
     (dlu:Land { name: 'DinoLand U.S.A.' }),
     (pwa:Land { name: 'Pandora - The World of Avatar' }),
   //=====Epcot==================================================================
-  (fw:Land { name: 'Future World' }),
-    (img:Section { name: 'Imagination!' }),
-    (sea:Section { name: 'The Seas with Nemo & Friends' }),
-    (land:Section { name: 'The Land' }),
-  // (ws:Land { name: 'World Showcase' }),
-    (mx:Section { name: 'Mexico' }),
-    (nr:Section { name: 'Norway' }),
+    (fw:Land { name: 'Future World' }),
+      (img:Section { name: 'Imagination!' }),
+      (sea:Section { name: 'The Seas with Nemo & Friends' }),
+      (land:Section { name: 'The Land' }),
+    //-----World Showcase-------------------------------------------------------
+      (mx:Section { name: 'Mexico' }),
+      (nr:Section { name: 'Norway' }),
   //=====Hollywood Studios======================================================
     (ecl:Land { name: 'Echo Lake' }),
     (pxp:Land { name: 'Pixar Place' }),
