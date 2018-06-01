@@ -13,6 +13,10 @@ match
     (mx:Section { name: 'Mexico' }),
     (nr:Section { name: 'Norway' }),
   //=====Hollywood Studios======================================================
+    (ecl:Land { name: 'Echo Lake' }),
+    (pxp:Land { name: 'Pixar Place' }),
+    (ssb:Land { name: 'Sunset Boulevard' }),
+    (tsl:Land { name: 'Toy Story Land' }),
   //=====Magic Kingdom==========================================================
     (al:Land { name: 'Adventureland' }),
     (fal:Land { name: 'Fantasyland' }),
@@ -23,7 +27,6 @@ match
     (ls:Land { name: 'Liberty Square' }),
     (tl:Land { name: 'Tomorrowland' })
 create
-  (test:Test { name: 'test'}),
   //=====Animal Kingdom=========================================================
     //-----Africa---------------------------------------------------------------
       (:Ride { name: 'Kilimanjaro Safaris' })-[:in]->(afr),
@@ -55,16 +58,16 @@ create
       //.....Norway.............................................................
         (:Ride { name: 'Frozen Ever After' })-[:in]->(nr),
   //=====Hollywood Studios======================================================
-    //-----Sunset Boulevard-----------------------------------------------------
-      (:Ride { name: 'Rock \'n\' Roller Coaster Starring Aerosmith' })-[:in]->(test),
-      (:Ride { name: 'The Twilight Zone Tower of Terror' })-[:in]->(test),
-    //-----Pixar Place----------------------------------------------------------
-      (:Ride { name: 'Toy Story Mania!' })-[:in]->(test),
     //-----Echo Lake------------------------------------------------------------
-      (:Ride { name: 'Star Tours - The Adventures Continue' })-[:in]->(test),
+      (:Ride { name: 'Star Tours - The Adventures Continue' })-[:in]->(ecl),
+    //-----Pixar Place----------------------------------------------------------
+      (:Ride { name: 'Toy Story Mania!' })-[:in]->(pxp),
+    //-----Sunset Boulevard-----------------------------------------------------
+      (:Ride { name: 'Rock \'n\' Roller Coaster Starring Aerosmith' })-[:in]->(ssb),
+      (:Ride { name: 'The Twilight Zone Tower of Terror' })-[:in]->(ssb),
     //-----Toy Story Land-------------------------------------------------------
-      (:Ride { name: 'Alien Swirling Saucers' })-[:in]->(test),
-      (:Ride { name: 'Slinky Dog Dash' })-[:in]->(test),
+      (:Ride { name: 'Alien Swirling Saucers' })-[:in]->(tsl),
+      (:Ride { name: 'Slinky Dog Dash' })-[:in]->(tsl),
   //=====Magic Kingdom==========================================================
     //-----Adventureland--------------------------------------------------------
       (:Ride { name: 'Jungle Cruise' })-[:in]->(al),

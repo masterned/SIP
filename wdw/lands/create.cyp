@@ -30,6 +30,10 @@ create
       (:Section { name: 'United Kingdom' })-[:in]->(ws),
       (:Section { name: 'Canada' })-[:in]->(ws),
   //=====Hollywood Studios======================================================
+    (:Land { name: 'Echo Lake' })-[:in]->(hs),
+    (:Land { name: 'Pixar Place' })-[:in]->(hs),
+    (:Land { name: 'Sunset Boulevard' })-[:in]->(hs),
+    (:Land { name: 'Toy Story Land' })-[:in]->(hs),
   //=====Magic Kingdom==========================================================
     (:Land { name: 'Main Street, U.S.A.' })-[:in]->(mk),
     (:Land { name: 'Adventureland' })-[:in]->(mk),
