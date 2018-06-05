@@ -1,36 +1,66 @@
 match
+  //=====Animal Kingdom=========================================================
+  //=====Epcot==================================================================
+    (fw:Land { name: 'Future World' }),
+      (img:Section { name: 'Imagination!' }),
+      (sea:Section { name: 'The Seas with Nemo & Friends' }),
+    (ws:Land { name: 'World Showcase' }),
+      (cn:Section { name: 'Canada' }),
+      (ch:Section { name: 'China' }),
+      (fr:Section { name: 'France' }),
+      (gr:Section { name: 'Germany' }),
+      (ig:Section { name: 'International Gateway' }),
+      (it:Section { name: 'Italy' }),
+      (jp:Section { name: 'Japan' }),
+      (mx:Section { name: 'Mexico' }),
+      (mr:Section { name: 'Morocco' }),
+      (nr:Section { name: 'Norway' }),
+      (us:Section { name: 'The American Adventure' }),
+      (uk:Section { name: 'United Kingdom' }),
+    (sp:Land { name: 'Showcase Plaza' }),
+  //=====Hollywood Studios======================================================
+  //=====Magic Kingdom==========================================================
+    (al:Land { name: 'Adventureland' }),
+    //-----Fantasyland----------------------------------------------------------
+      (cc:Section { name: 'Castle Courtyard' }),
+      (ef:Section { name: 'Enchanted Forest' }),
+      (sc:Section { name: 'Storybook Circus' }),
+    (fl:Land { name: 'Frontierland' }),
+    (ls:Land { name: 'Liberty Square' }),
+    (msu:Land { name: 'Main Street, U.S.A.' }),
+    (tl:Land { name: 'Tomorrowland' })
 create
   //=====Animal Kingdom=========================================================
   //=====Epcot==================================================================
     //-----Future World---------------------------------------------------------
-      (:Shop { name: 'Art of Disney' })-[:in]->(),
-      (:Shop { name: 'Camera Center - Future World' })-[:in]->(),
-      (:Shop { name: 'Club Cool' })-[:in]->(),
-      (:Shop { name: 'Gateway Gifts' })-[:in]->(),
-      (:Shop { name: 'Mission: SPACE Cargo Bay' })-[:in]->(),
-      (:Shop { name: 'Mouse Gear' })-[:in]->(),
-      (:Shop { name: 'Pin Central - Future World' })-[:in]->(),
-      (:Shop { name: 'Test Track SIMporium' })-[:in]->(),
+      (:Shop { name: 'Art of Disney' })-[:in]->(fw),
+      (:Shop { name: 'Camera Center - Future World' })-[:in]->(fw),
+      (:Shop { name: 'Club Cool' })-[:in]->(fw),
+      (:Shop { name: 'Gateway Gifts' })-[:in]->(fw),
+      (:Shop { name: 'Mission: SPACE Cargo Bay' })-[:in]->(fw),
+      (:Shop { name: 'Mouse Gear' })-[:in]->(fw),
+      (:Shop { name: 'Pin Central - Future World' })-[:in]->(fw),
+      (:Shop { name: 'Test Track SIMporium' })-[:in]->(fw),
       //.....Imagination!.......................................................
-        (:Shop { name: 'ImageWorks' })-[:in]->(),
+        (:Shop { name: 'ImageWorks' })-[:in]->(img),
       //.....The Seas with Nemo & Friends.......................................
-        (:Shop { name: 'SeaBase Gift Shop' })-[:in]->(),
+        (:Shop { name: 'SeaBase Gift Shop' })-[:in]->(sea),
     //-----Main Entrance--------------------------------------------------------
-      (:Shop { name: 'The Gift Stop' })-[:in]->(),
+      // (:Shop { name: 'The Gift Stop' })-[:in]->(),
     //-----World Showcase-------------------------------------------------------
-    (:Shop { name: 'Village Traders' })-[:in]->(),
+    (:Shop { name: 'Village Traders' })-[:in]->(ws),
       //.....Canada.............................................................
-        (:Shop { name: 'Northwest Mercantile' })-[:in]->(),
-        (:Shop { name: 'Trading Post' })-[:in]->(),
+        (:Shop { name: 'Northwest Mercantile' })-[:in]->(cn),
+        (:Shop { name: 'Trading Post' })-[:in]->(cn),
       //.....China..............................................................
-        (:Shop { name: 'Good Fortune Gifts' })-[:in]->(),
-        (:Shop { name: 'House of Good Fortune' })-[:in]->(),
+        (:Shop { name: 'Good Fortune Gifts' })-[:in]->(ch),
+        (:Shop { name: 'House of Good Fortune' })-[:in]->(ch),
       //.....France.............................................................
-        (:Shop { name: 'La Signature' })-[:in]->(),
-        (:Shop { name: 'L\'Esprit de la Provence' })-[:in]->(),
-        (:Shop { name: 'Les Vins de France' })-[:in]->(),
-        (:Shop { name: 'Plume et Palette' })-[:in]->(),
-        (:Shop { name: 'Souvenirs de France' })-[:in]->(),
+        (:Shop { name: 'La Signature' })-[:in]->(fr),
+        (:Shop { name: 'L\'Esprit de la Provence' })-[:in]->(fr),
+        (:Shop { name: 'Les Vins de France' })-[:in]->(fr),
+        (:Shop { name: 'Plume et Palette' })-[:in]->(fr),
+        (:Shop { name: 'Souvenirs de France' })-[:in]->(fr),
       //.....Germany............................................................
         (:Shop { name: 'Das Kaufhaus' })-[:in]->(gr),
         (:Shop { name: 'Der Teddybar' })-[:in]->(gr),
@@ -42,42 +72,42 @@ create
         (:Shop { name: 'Volkskunst' })-[:in]->(gr),
         (:Shop { name: 'Weinkeller' })-[:in]->(gr),
       //.....International Gateway..............................................
-        (:Shop { name: 'World Traveler' })-[:in]->(intr),
+        (:Shop { name: 'World Traveler' })-[:in]->(ig),
       //.....Italy..............................................................
-        (:Shop { name: 'Il Bel Cristallo' })-[:in]->(),
-        (:Shop { name: 'La Bottega Italiana' })-[:in]->(),
-        (:Shop { name: 'La Gemma Elegante' })-[:in]->(),
+        (:Shop { name: 'Il Bel Cristallo' })-[:in]->(it),
+        (:Shop { name: 'La Bottega Italiana' })-[:in]->(it),
+        (:Shop { name: 'La Gemma Elegante' })-[:in]->(it),
       //.....Japan..............................................................
-        (:Shop { name: 'Mitsukoshi Department Store' })-[:in]->(),
-        (:Shop { name: 'Mitsukoshi Kiosk' })-[:in]->(),
+        (:Shop { name: 'Mitsukoshi Department Store' })-[:in]->(jp),
+        (:Shop { name: 'Mitsukoshi Kiosk' })-[:in]->(jp),
       //.....Mexico.............................................................
-        (:Shop { name: 'El Ranchito del Norte' })-[:in]->(),
-        (:Shop { name: 'La Princesa de Cristal - Mexico' })-[:in]->(),
-        (:Shop { name: 'La Tienda Encantada' })-[:in]->(),
-        (:Shop { name: 'Plaza de los Amigos' })-[:in]->(),
-        (:Shop { name: 'Ring Carvers' })-[:in]->(),
+        (:Shop { name: 'El Ranchito del Norte' })-[:in]->(mx),
+        (:Shop { name: 'La Princesa de Cristal - Mexico' })-[:in]->(mx),
+        (:Shop { name: 'La Tienda Encantada' })-[:in]->(mx),
+        (:Shop { name: 'Plaza de los Amigos' })-[:in]->(mx),
+        (:Shop { name: 'Ring Carvers' })-[:in]->(mx),
       //.....Morocco............................................................
-        (:Shop { name: 'Casablanca Carpets' })-[:in]->(),
-        (:Shop { name: 'The Brass Bazaar' })-[:in]->(),
-        (:Shop { name: 'Marketplace in the Medina' })-[:in]->(),
-        (:Shop { name: 'Souk-al-Magreb' })-[:in]->(),
-        (:Shop { name: 'Tangier Traders' })-[:in]->(),
+        (:Shop { name: 'Casablanca Carpets' })-[:in]->(mr),
+        (:Shop { name: 'The Brass Bazaar' })-[:in]->(mr),
+        (:Shop { name: 'Marketplace in the Medina' })-[:in]->(mr),
+        (:Shop { name: 'Souk-al-Magreb' })-[:in]->(mr),
+        (:Shop { name: 'Tangier Traders' })-[:in]->(mr),
       //.....Norway.............................................................
-        (:Shop { name: 'The Puffin\'s Roost' })-[:in]->(),
-        (:Shop { name: 'Wandering Reindeer' })-[:in]->(),
+        (:Shop { name: 'The Puffin\'s Roost' })-[:in]->(nr),
+        (:Shop { name: 'Wandering Reindeer' })-[:in]->(nr),
       //.....United Kingdom.....................................................
-        (:Shop { name: 'The Crown & Crest' })-[:in]->(),
-        (:Shop { name: 'Lords and Ladies' })-[:in]->(),
-        (:Shop { name: 'Sportsman\'s Shoppe' })-[:in]->(),
-        (:Shop { name: 'The Queen\'s Table' })-[:in]->(),
-        (:Shop { name: 'The Tea Caddy' })-[:in]->(),
-        (:Shop { name: 'The Toy Soldier' })-[:in]->(),
+        (:Shop { name: 'The Crown & Crest' })-[:in]->(uk),
+        (:Shop { name: 'Lords and Ladies' })-[:in]->(uk),
+        (:Shop { name: 'Sportsman\'s Shoppe' })-[:in]->(uk),
+        (:Shop { name: 'The Queen\'s Table' })-[:in]->(uk),
+        (:Shop { name: 'The Tea Caddy' })-[:in]->(uk),
+        (:Shop { name: 'The Toy Soldier' })-[:in]->(uk),
       //.....The American Adventure.............................................
-        (:Shop { name: 'Heritage Manor Gifts' })-[:in]->(),
-        (:Shop { name: 'My Heritage Books' })-[:in]->(),
+        (:Shop { name: 'Heritage Manor Gifts' })-[:in]->(us),
+        (:Shop { name: 'My Heritage Books' })-[:in]->(us),
     //-----Showcase Plaza-------------------------------------------------------
-      (:Shop { name: 'Disney Traders' })-[:in]->(),
-      (:Shop { name: 'Port of Entry' })-[:in]->(),
+      (:Shop { name: 'Disney Traders' })-[:in]->(sp),
+      (:Shop { name: 'Port of Entry' })-[:in]->(sp),
   //=====Hollywood Studios======================================================
   //=====Magic Kingdom==========================================================
     //-----Main Street U.S.A.---------------------------------------------------

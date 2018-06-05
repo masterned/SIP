@@ -31,8 +31,8 @@ create
   //=====Animal Kingdom=========================================================
   //=====Epcot==================================================================
     //-----Future World---------------------------------------------------------
-      (:Dining { name: 'Electric Umbrella' }),
-      (:Dining { name: 'Fountain View' }),
+      (:Dining { name: 'Electric Umbrella' })-[:in]->(fw),
+      (:Dining { name: 'Fountain View' })-[:in]->(fw),
       //.....The Land...........................................................
         (:Dining { name: 'Chip \'n\' Dale\'s Harvest Feast at The Garden Grill' })-[:in]->(land),
         (:Dining { name: 'Sunshine Seasons' })-[:in]->(land),
