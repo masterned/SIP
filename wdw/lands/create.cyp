@@ -11,7 +11,7 @@ create
     (:Land { name: 'Discovery Island' })-[:in]->(ak),
     (:Land { name: 'Pandora - The World of Avatar' })-[:in]->(ak),
     (:Land { name: 'Rafiki\'s Planet Watch' })-[:in]->(ak),
-    (:Land { name: 'The Oasis' })-[:in]->(ak),
+    (:Land { name: 'Oasis' })-[:in]->(ak),
   //=====Epcot==================================================================
     (fw:Land { name: 'Future World' })-[:in]->(ep),
       (:Section { name: 'Imagination!' })-[:in]->(fw),
