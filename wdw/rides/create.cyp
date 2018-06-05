@@ -81,12 +81,13 @@ create
       //.....Enchanted Forest...................................................
         (:Ride { name: 'Mad Tea Party' })-[:in]->(ef),
         (:Ride { name: 'The Many Adventures of Winnie the Pooh' })-[:in]->(ef),
-        (:Ride { name: 'The Seven Dwarves Mine Train' })-[:in]->(ef),
-        (:Ride { name: 'Under the Sea~Journey of the Little Mermaid' })-[:in]->(ef),
+        (:Ride { name: 'Seven Dwarves Mine Train' })-[:in]->(ef),
+        (:Ride { name: 'Under the Sea ~ Journey of the Little Mermaid' })-[:in]->(ef),
       //.....Storybook Circus...................................................
         (:Ride { name: 'Dumbo the Flying Elephant' })-[:in]->(sc),
         (:Ride { name: 'The Barnstormer' })-[:in]->(sc),
     //-----Frontierland---------------------------------------------------------
+      (:Ride { name: 'Big Thunder Mountain Railroad' })-[:in]->(frl),
       (:Ride { name: 'Splash Mountain' })-[:in]->(frl),
     //-----Liberty Square-------------------------------------------------------
       (:Ride { name: 'Haunted Mansion' })-[:in]->(ls),

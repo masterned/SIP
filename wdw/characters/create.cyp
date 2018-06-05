@@ -20,9 +20,9 @@ match
     (ppf:Ride { name: 'Peter Pan\'s Flight' }),
     (pss:Meet_and_Greet { name: 'Pete\'s Silly Slideshow' }),
     (pfh:Meet_and_Greet { name: 'Princess Fairytale Hall' }),
-    (tcp:Dining { name: 'Crystal Palace, A Buffet with Character' }),
-    (mca:Ride {name: 'The Magic Carpets of Aladdin' }),
-    (maw:Ride {name: 'The Many Adventures of Winnie the Pooh' }),
+    (tcp:Dining { name: 'The Crystal Palace' }),
+    (mca:Ride { name: 'The Magic Carpets of Aladdin' }),
+    (maw:Ride { name: 'The Many Adventures of Winnie the Pooh' }),
     (smt:Ride { name: 'Splash Mountain' }),
     (tst:Meet_and_Greet { name: 'Town Square Theater' })
 create
@@ -97,7 +97,7 @@ create
   (:Character { name: 'Sadness' })-[:in]->(t),
   (:Character { name: 'Seventh Sister' })-[:in]->(t),
   (swh:Character { name: 'Snow White' })-[:in { meetable: true }]->(msu),
-  (swh)-[:in { meetable: true }]->(crt)-[:in]->(t),
+  (swh)-[:in { meetable: true }]->(crt),
   (:Character { name: 'Sofia the First' })-[:in]->(t),
   (:Character { name: 'Star-Lord' })-[:in]->(t),
   (:Character { name: 'Stormtroopers' })-[:in]->(t),

@@ -8,7 +8,10 @@ create
     (:Land { name: 'Africa' })-[:in]->(ak),
     (:Land { name: 'Asia' })-[:in]->(ak),
     (:Land { name: 'DinoLand U.S.A.' })-[:in]->(ak),
+    (:Land { name: 'Discovery Island' })-[:in]->(ak),
     (:Land { name: 'Pandora - The World of Avatar' })-[:in]->(ak),
+    (:Land { name: 'Rafiki\'s Planet Watch' })-[:in]->(ak),
+    (:Land { name: 'The Oasis' })-[:in]->(ak),
   //=====Epcot==================================================================
     (fw:Land { name: 'Future World' })-[:in]->(ep),
       (:Section { name: 'Imagination!' })-[:in]->(fw),
@@ -30,7 +33,10 @@ create
       (:Section { name: 'United Kingdom' })-[:in]->(ws),
     (:Land { name: 'Showcase Plaza' })-[:in]->(ep),
   //=====Hollywood Studios======================================================
+    (:Land { name: 'Animation Courtyard' })-[:in]->(hs),
     (:Land { name: 'Echo Lake' })-[:in]->(hs),
+    (:Land { name: 'Grand Avenue' })-[:in]->(hs),
+    (:Land { name: 'Hollywood Boulevard' })-[:in]->(hs),
     (:Land { name: 'Pixar Place' })-[:in]->(hs),
     (:Land { name: 'Sunset Boulevard' })-[:in]->(hs),
     (:Land { name: 'Toy Story Land' })-[:in]->(hs),

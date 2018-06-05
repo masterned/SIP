@@ -48,6 +48,6 @@ create
     //-----Frontierland---------------------------------------------------------
       (:Show { name: 'Country Bear Jamboree' })-[:in]->(frl),
     //-----Liberty Square-------------------------------------------------------
-      (:Show { name: 'Hall of Presidents' })-[:in]->(ls),
+      (:Show { name: 'The Hall of Presidents' })-[:in]->(ls),
     //-----Tomorrowland---------------------------------------------------------
       (:Show { name: 'Monsters, Inc. Laugh Floor' })-[:in]->(tl);

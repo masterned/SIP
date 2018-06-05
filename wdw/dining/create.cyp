@@ -116,9 +116,9 @@ create
       (:Dining { name: 'The Diamond Horseshoe' })-[:in]->(ls),
     //-----Main Street U.S.A.-----------------------------------------------------
       (:Dining { name: 'Casey\'s Corner' })-[:in]->(msu),
-      (:Dining { name: 'Crystal Palace, A Buffet with Character' })-[:in]->(msu),
       (:Dining { name: 'Main Street Bakery' })-[:in]->(msu),
       (:Dining { name: 'Plaza Ice Cream Parlor' })-[:in]->(msu),
+      (:Dining { name: 'The Crystal Palace' })-[:in]->(msu),
       (:Dining { name: 'The Plaza Restaurant' })-[:in]->(msu),
       (:Dining { name: 'Tony\'s Town Square Restaurant' })-[:in]->(msu),
     //-----Tomorrowland-----------------------------------------------------------
