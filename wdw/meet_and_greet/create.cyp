@@ -1,5 +1,6 @@
 match
   //=====Animal Kingdom=========================================================
+    (dlu:Land { name: 'DinoLand U.S.A.'}),
   //=====Epcot==================================================================
     (fw:Land { name: 'Future World' }),
     (nr:Section { name: 'Norway' }),
@@ -12,6 +13,8 @@ match
       (cc:Section { name: 'Castle Courtyard' })
 create
   //=====Animal Kingdom=========================================================
+    //-----DinoLand U.S.A.------------------------------------------------------
+      (:Meet_and_Greet { name: 'Donald\'s Dino-Bash!' })-[:in]->(dlu),
   //=====Epcot==================================================================
     //-----Future World---------------------------------------------------------
       (:Meet_and_Greet { name: 'Epcot Character Spot' })-[:in]->(fw),

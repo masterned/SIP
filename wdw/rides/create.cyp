@@ -27,75 +27,112 @@ match
     (ls:Land { name: 'Liberty Square' }),
     (tl:Land { name: 'Tomorrowland' })
 create
+  //~~~~~Categories~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    (rc_rt:RideType { name: 'Roller Coaster' }),
+    (dk_rt:RideType { name: 'Dark Ride' }),
+    (ms_rt:RideType { name: 'Motion Simulator' }),
+    (fl_rt:RideType { name: 'Flat' }),
+    (wt_rt:RideType { name: 'Water' }),
+    (gt_rt:RideType { name: 'Gentle' }),
+    (tr_rt:RideType { name: 'Thrill' }),
+
+  //~~~~~Features~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    (sp_rf:RideFeature { name: 'Spinning' }),
+    (dk_rf:RideFeature { name: 'Darkness' }),
+    (dp_rf:RideFeature { name: 'Drops' }),
+    (in_rf:RideFeature { name: 'Inversions' }),
+    (sd_rf:RideFeature { name: 'Speed' }),
+    (rg_rf:RideFeature { name: 'Rough' }),
+    (ht_rf:RideFeature { name: 'Heights' }),
+    (gf_rf:RideFeature { name: 'G Force' }),
+    (cs_rf:RideFeature { name: 'Closed Space' }),
+
   //=====Animal Kingdom=========================================================
     //-----Africa---------------------------------------------------------------
-      (:Ride { name: 'Kilimanjaro Safaris' })-[:in]->(afr),
+      (gt_rt)<-[:is_a]-(:Ride { name: 'Kilimanjaro Safaris' })-[:in]->(afr),
     //-----Asia-----------------------------------------------------------------
-      (:Ride { name: 'Expedition Everest - Legend of the Forbidden Mountain' })-[:in]->(asa),
-      (:Ride { name: 'Kali River Rapids' })-[:in]->(asa),
+      (rc_rt)<-[:is_a]-(ee:Ride { name: 'Expedition Everest - Legend of the Forbidden Mountain' })-[:in]->(asa),
+      (dk_rf)<-[:features]-(ee)-[:features]->(dp_rf),
+      (sd_rf)<-[:features]-(ee)-[:features]->(ht_rf),
+      (wt_rt)<-[:is_a]-(krr:Ride { name: 'Kali River Rapids' })-[:in]->(asa),
+      (tr_rt)<-[:is_a]-(krr),
     //-----DinoLand U.S.A.------------------------------------------------------
-      (:Ride { name: 'DINOSAUR' })-[:in]->(dlu),
-      (:Ride { name: 'Primeval Whirl' })-[:in]->(dlu),
-      (:Ride { name: 'TriceraTop Spin' })-[:in]->(dlu),
+      (dk_rt)<-[:is_a]-(dns:Ride { name: 'DINOSAUR' })-[:in]->(dlu),
+      (tr_rt)<-[:is_a]-(dns)-[:features]->(dk_rf),
+      (rg_rf)<-[:features]-(dns),
+      (rc_rt)<-[:is_a]-(pew:Ride { name: 'Primeval Whirl' })-[:in]->(dlu),
+      (sp_rf)<-[:features]-(pew)-[:features]->(dp_rf),
+      (gt_rt)<-[:is_a]-(tts:Ride { name: 'TriceraTop Spin' })-[:in]->(dlu),
+      (gt_rt)<-[:is_a]-(tts)-[:is_a]->(fl_rt),
+      (sp_rf)<-[:features]-(tts),
     //-----Pandora - The World of Avatar----------------------------------------
-      (:Ride { name: 'Avatar Flight of Passage' })-[:in]->(pwa),
-      (:Ride { name: 'Na\'vi River Journey' })-[:in]->(pwa),
+      (ms_rt)<-[:is_a]-(afp:Ride { name: 'Avatar Flight of Passage' })-[:in]->(pwa),
+      (tr_rt)<-[:is_a]-(afp)-[:features]->(dp_rf),
+      (ht_rf)<-[:features]-(afp),
+      (dk_rt)<-[:is_a]-(:Ride { name: 'Na\'vi River Journey' })-[:in]->(pwa),
   //=====Epcot==================================================================
     //-----Future World---------------------------------------------------------
-      (:Ride { name: 'Mission: SPACE' })-[:in]->(fw),
-      (:Ride { name: 'Spaceship Earth' })-[:in]->(fw),
-      (:Ride { name: 'Test Track' })-[:in]->(fw),
+      (ms_rt)<-[:is_a]-(mss:Ride { name: 'Mission: SPACE' })-[:in]->(fw),
+      (tr_rt)<-[:is_a]-(mss)-[:features]->(sp_rf),
+      (dk_rf)<-[:features]-(mss)-[:features]->(cs_rf),
+      (dk_rt)<-[:is_a]-(sse:Ride { name: 'Spaceship Earth' })-[:in]->(fw),
+      (gt_rt)<-[:is_a]-(sse)-[:features]->(dk_rf),
+      (tr_rt)<-[:is_a]-(tt:Ride { name: 'Test Track' })-[:in]->(fw),
+      (sd_rf)<-[:features]-(tt),
       //.....Imagination!.......................................................
-        (:Ride { name: 'Journey Into Imagination With Figment' })-[:in]->(img),
+        (dk_rt)<-[:is_a]-(:Ride { name: 'Journey Into Imagination With Figment' })-[:in]->(img),
       //.....The Land...........................................................
-        (:Ride { name: 'Living with the Land' })-[:in]->(land),
-        (:Ride { name: 'Soarin\'' })-[:in]->(land),
+        (gt_rt)<-[:is_a]-(:Ride { name: 'Living with the Land' })-[:in]->(land),
+        (ms_rt)<-[:is_a]-(srn:Ride { name: 'Soarin\'' })-[:in]->(land),
+        (gt_rt)<-[:is_a]-(srn)-[:is_a]->(tr_rt),
+        (ht_rf)<-[:features]-(srn)-[:features]->(dp_rf),
       //.....The Seas with Nemo & Friends.......................................
-        (:Ride { name: 'The Seas with Nemo and Friends Attraction' })-[:in]->(sea),
+        (dk_rt)<-[:is_a]-(snf:Ride { name: 'The Seas with Nemo and Friends Attraction' })-[:in]->(sea),
+        (gt_rt)<-[:is_a]-(snf),
     //-----World Showcase-------------------------------------------------------
       //.....Mexico.............................................................
-        (:Ride { name: 'Gran Fietsa Tour Starring The Three Caballeros' })-[:in]->(mx),
+        (dk_rt)<-[:is_a]-(:Ride { name: 'Gran Fietsa Tour Starring The Three Caballeros' })-[:in]->(mx),
       //.....Norway.............................................................
-        (:Ride { name: 'Frozen Ever After' })-[:in]->(nr),
+        (dk_rt)<-[:is_a]-(:Ride { name: 'Frozen Ever After' })-[:in]->(nr),
   //=====Hollywood Studios======================================================
     //-----Echo Lake------------------------------------------------------------
-      (:Ride { name: 'Star Tours - The Adventures Continue' })-[:in]->(ecl),
+      (ms_rt)<-[:is_a]-(:Ride { name: 'Star Tours - The Adventures Continue' })-[:in]->(ecl),
     //-----Pixar Place----------------------------------------------------------
-      (:Ride { name: 'Toy Story Mania!' })-[:in]->(pxp),
+      (dk_rt)<-[:is_a]-(:Ride { name: 'Toy Story Mania!' })-[:in]->(pxp),
     //-----Sunset Boulevard-----------------------------------------------------
-      (:Ride { name: 'Rock \'n\' Roller Coaster Starring Aerosmith' })-[:in]->(ssb),
-      (:Ride { name: 'The Twilight Zone Tower of Terror' })-[:in]->(ssb),
+      (rc_rt)<-[:is_a]-(:Ride { name: 'Rock \'n\' Roller Coaster Starring Aerosmith' })-[:in]->(ssb),
+      (tr_rt)<-[:is_a]-(:Ride { name: 'The Twilight Zone Tower of Terror' })-[:in]->(ssb),
     //-----Toy Story Land-------------------------------------------------------
-      (:Ride { name: 'Alien Swirling Saucers' })-[:in]->(tsl),
-      (:Ride { name: 'Slinky Dog Dash' })-[:in]->(tsl),
+      (fl_rt)<-[:is_a]-(:Ride { name: 'Alien Swirling Saucers' })-[:in]->(tsl),
+      (rc_rt)<-[:is_a]-(:Ride { name: 'Slinky Dog Dash' })-[:in]->(tsl),
   //=====Magic Kingdom==========================================================
     //-----Adventureland--------------------------------------------------------
-      (:Ride { name: 'Jungle Cruise' })-[:in]->(al),
-      (:Ride { name: 'Pirates of the Caribbean' })-[:in]->(al),
-      (:Ride { name: 'The Magic Carpets of Aladdin' })-[:in]->(al),
+      (gt_rt)<-[:is_a]-(:Ride { name: 'Jungle Cruise' })-[:in]->(al),
+      (dk_rt)<-[:is_a]-(:Ride { name: 'Pirates of the Caribbean' })-[:in]->(al),
+      (fl_rt)<-[:is_a]-(:Ride { name: 'The Magic Carpets of Aladdin' })-[:in]->(al),
     //-----Fantasyland----------------------------------------------------------
       //.....Castle Courtyard...................................................
-        (:Ride { name: '"it\'s a small world"' })-[:in]->(cc),
-        (:Ride { name: 'Peter Pan\'s Flight' })-[:in]->(cc),
-        (:Ride { name: 'Prince Charming Regal Carrousel' })-[:in]->(cc),
+        (dk_rt)<-[:is_a]-(:Ride { name: '"it\'s a small world"' })-[:in]->(cc),
+        (dk_rt)<-[:is_a]-(:Ride { name: 'Peter Pan\'s Flight' })-[:in]->(cc),
+        (gt_rt)<-[:is_a]-(:Ride { name: 'Prince Charming Regal Carrousel' })-[:in]->(cc),
       //.....Enchanted Forest...................................................
-        (:Ride { name: 'Mad Tea Party' })-[:in]->(ef),
-        (:Ride { name: 'The Many Adventures of Winnie the Pooh' })-[:in]->(ef),
-        (:Ride { name: 'Seven Dwarves Mine Train' })-[:in]->(ef),
-        (:Ride { name: 'Under the Sea ~ Journey of the Little Mermaid' })-[:in]->(ef),
+        (fl_rt)<-[:is_a]-(:Ride { name: 'Mad Tea Party' })-[:in]->(ef),
+        (dk_rt)<-[:is_a]-(:Ride { name: 'The Many Adventures of Winnie the Pooh' })-[:in]->(ef),
+        (dk_rt)<-[:is_a]-(:Ride { name: 'Seven Dwarves Mine Train' })-[:in]->(ef),
+        (dk_rt)<-[:is_a]-(:Ride { name: 'Under the Sea ~ Journey of the Little Mermaid' })-[:in]->(ef),
       //.....Storybook Circus...................................................
-        (:Ride { name: 'Dumbo the Flying Elephant' })-[:in]->(sc),
-        (:Ride { name: 'The Barnstormer' })-[:in]->(sc),
+        (gt_rt)<-[:is_a]-(:Ride { name: 'Dumbo the Flying Elephant' })-[:in]->(sc),
+        (rc_rt)<-[:is_a]-(:Ride { name: 'The Barnstormer' })-[:in]->(sc),
     //-----Frontierland---------------------------------------------------------
-      (:Ride { name: 'Big Thunder Mountain Railroad' })-[:in]->(frl),
-      (:Ride { name: 'Splash Mountain' })-[:in]->(frl),
+      (rc_rt)<-[:is_a]-(:Ride { name: 'Big Thunder Mountain Railroad' })-[:in]->(frl),
+      (wt_rt)<-[:is_a]-(:Ride { name: 'Splash Mountain' })-[:in]->(frl),
     //-----Liberty Square-------------------------------------------------------
-      (:Ride { name: 'Haunted Mansion' })-[:in]->(ls),
-      (:Ride { name: 'Liberty Square Riverboat' })-[:in]->(ls),
+      (dk_rt)<-[:is_a]-(:Ride { name: 'Haunted Mansion' })-[:in]->(ls),
+      (gt_rt)<-[:is_a]-(:Ride { name: 'Liberty Square Riverboat' })-[:in]->(ls),
     //-----Tomorrowland---------------------------------------------------------
-      (:Ride { name: 'Astro Orbiter' })-[:in]->(tl),
-      (:Ride { name: 'Buzz Lightyear\'s Space Ranger Spin' })-[:in]->(tl),
-      (:Ride { name: 'Space Mountain' })-[:in]->(tl),
-      (:Ride { name: 'Tomorrowland Speedway' })-[:in]->(tl),
-      (:Ride { name: 'Tomorrowland Transit Authority PeopleMover' })-[:in]->(tl),
-      (:Ride { name: 'Walt Disney\'s Carousel of Progress' })-[:in]->(tl);
+      (tr_rt)<-[:is_a]-(:Ride { name: 'Astro Orbiter' })-[:in]->(tl),
+      (dk_rt)<-[:is_a]-(:Ride:Interactive { name: 'Buzz Lightyear\'s Space Ranger Spin' })-[:in]->(tl),
+      (rc_rt)<-[:is_a]-(:Ride { name: 'Space Mountain' })-[:in]->(tl),
+      (gt_rt)<-[:is_a]-(:Ride:Interactive { name: 'Tomorrowland Speedway' })-[:in]->(tl),
+      (gt_rt)<-[:is_a]-(:Ride { name: 'Tomorrowland Transit Authority PeopleMover' })-[:in]->(tl),
+      (dk_rt)<-[:is_a]-(:Ride:Show { name: 'Walt Disney\'s Carousel of Progress' })-[:in]->(tl);

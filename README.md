@@ -14,3 +14,7 @@
   > The structure of the semantic web - as proposed by Tim Berners-Lee - closely resembles the structure of a graph database. With the use of a graph database system (such as neo4j), displaying the inner-workings and possibilities of the semantic web is simplified.
 
   > _author note: this branch, I decided to split the folders by category instead of by park for better organization_
+
+## TODO
+  1. finish paper
+  1. create ride categories
