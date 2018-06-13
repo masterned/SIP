@@ -19,13 +19,13 @@
   3. open the client in the terminal and enter your credentials
   `user.hostname$ neo4j-client --username=[user] --password=[pass] localhost [port ("Bolt port" in neo4j desktop details: usually 7687)]`
   4. run creation scripts in magnitude order from greatest to least (groups in the same tier can be run in any order) `:source [path]`
-    1. world
-    2. land
-    3. rides, shops, dinning, meet-and-greets, galleries, interactives, services, shows, transportation, and walk-throughs
-    4. characters and animals
+      1. world
+      2. land
+      3. rides, shops, dinning, meet-and-greets, galleries, interactives, services, shows, transportation, and walk-throughs
+      4. characters and animals
   5. query wanted information from the neo4j desktop or client (use the desktop for better visualization)
-    * display all: `match (m) return m` (due to the size of the database, will only show 300 of the nodes)
-    * ride information `match (l)<-[:in]-(r:Ride)-[:is_a]->(t) optional match (r)-[:features]->(f) return l, r, t, f;` (displays all rides, the lands/section they are located in, their type, and features)
+      * display all: `match (m) return m` (due to the size of the database, will only show 300 of the nodes)
+      * ride information `match (l)<-[:in]-(r:Ride)-[:is_a]->(t) optional match (r)-[:features]->(f) return l, r, t, f;` (displays all rides, the lands/section they are located in, their type, and features)
 
 ## TODO
   1. finish paper
