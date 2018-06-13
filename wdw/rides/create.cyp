@@ -42,7 +42,7 @@ create
     (dp_rf:RideFeature { name: 'Drops' }),
     (in_rf:RideFeature { name: 'Inversions' }),
     (sd_rf:RideFeature { name: 'Speed' }),
-    (rg_rf:RideFeature { name: 'Rough' }),
+    (rg_rf:RideFeature { name: 'Rough Terrain' }),
     (ht_rf:RideFeature { name: 'Heights' }),
     (gf_rf:RideFeature { name: 'G Force' }),
     (cs_rf:RideFeature { name: 'Closed Space' }),
@@ -52,19 +52,18 @@ create
       (gt_rt)<-[:is_a]-(:Ride { name: 'Kilimanjaro Safaris' })-[:in]->(afr),
     //-----Asia-----------------------------------------------------------------
       (rc_rt)<-[:is_a]-(ee:Ride { name: 'Expedition Everest - Legend of the Forbidden Mountain' })-[:in]->(asa),
-      (dk_rf)<-[:features]-(ee)-[:features]->(dp_rf),
+      (dk_rf)<-[:features { frequency: 'medium', intensity: 'medium'}]-(ee)-[:features { frequency: 'medium', intensity: 'high' }]->(dp_rf),
       (sd_rf)<-[:features]-(ee)-[:features]->(ht_rf),
       (wt_rt)<-[:is_a]-(krr:Ride { name: 'Kali River Rapids' })-[:in]->(asa),
-      (tr_rt)<-[:is_a]-(krr),
+      (tr_rt)<-[:is_a]-(krr)-[:features]->(rg_rf),
     //-----DinoLand U.S.A.------------------------------------------------------
       (dk_rt)<-[:is_a]-(dns:Ride { name: 'DINOSAUR' })-[:in]->(dlu),
-      (tr_rt)<-[:is_a]-(dns)-[:features]->(dk_rf),
-      (rg_rf)<-[:features]-(dns),
+      (tr_rt)<-[:is_a]-(dns)-[:features { frequency: 'high', intensity: 'high' }]->(dk_rf),
+      (rg_rf)<-[:features { frequency: 'high', intensity: 'high'}]-(dns),
       (rc_rt)<-[:is_a]-(pew:Ride { name: 'Primeval Whirl' })-[:in]->(dlu),
       (sp_rf)<-[:features]-(pew)-[:features]->(dp_rf),
       (gt_rt)<-[:is_a]-(tts:Ride { name: 'TriceraTop Spin' })-[:in]->(dlu),
-      (gt_rt)<-[:is_a]-(tts)-[:is_a]->(fl_rt),
-      (sp_rf)<-[:features]-(tts),
+      (ft_rt)<-[:is_a]-(tts)-[:features]->(sp_rf),
     //-----Pandora - The World of Avatar----------------------------------------
       (ms_rt)<-[:is_a]-(afp:Ride { name: 'Avatar Flight of Passage' })-[:in]->(pwa),
       (tr_rt)<-[:is_a]-(afp)-[:features]->(dp_rf),
@@ -76,16 +75,16 @@ create
       (tr_rt)<-[:is_a]-(mss)-[:features]->(sp_rf),
       (dk_rf)<-[:features]-(mss)-[:features]->(cs_rf),
       (dk_rt)<-[:is_a]-(sse:Ride { name: 'Spaceship Earth' })-[:in]->(fw),
-      (gt_rt)<-[:is_a]-(sse)-[:features]->(dk_rf),
+      (gt_rt)<-[:is_a]-(sse)-[:features { frequency: 'high', intensity: 'low' }]->(dk_rf),
       (tr_rt)<-[:is_a]-(tt:Ride { name: 'Test Track' })-[:in]->(fw),
-      (sd_rf)<-[:features]-(tt),
+      (sd_rf)<-[:features]-(tt)-[:features { frequency: 'low', intensity: 'medium' }]->(rg_rf),
       //.....Imagination!.......................................................
         (dk_rt)<-[:is_a]-(:Ride { name: 'Journey Into Imagination With Figment' })-[:in]->(img),
       //.....The Land...........................................................
         (gt_rt)<-[:is_a]-(:Ride { name: 'Living with the Land' })-[:in]->(land),
         (ms_rt)<-[:is_a]-(srn:Ride { name: 'Soarin\'' })-[:in]->(land),
         (gt_rt)<-[:is_a]-(srn)-[:is_a]->(tr_rt),
-        (ht_rf)<-[:features]-(srn)-[:features]->(dp_rf),
+        (ht_rf)<-[:features { frequency: 'high', intensity: 'high' }]-(srn)-[:features]->(dp_rf),
       //.....The Seas with Nemo & Friends.......................................
         (dk_rt)<-[:is_a]-(snf:Ride { name: 'The Seas with Nemo and Friends Attraction' })-[:in]->(sea),
         (gt_rt)<-[:is_a]-(snf),
@@ -96,11 +95,16 @@ create
         (dk_rt)<-[:is_a]-(:Ride { name: 'Frozen Ever After' })-[:in]->(nr),
   //=====Hollywood Studios======================================================
     //-----Echo Lake------------------------------------------------------------
-      (ms_rt)<-[:is_a]-(:Ride { name: 'Star Tours - The Adventures Continue' })-[:in]->(ecl),
+      (ms_rt)<-[:is_a]-(stt:Ride { name: 'Star Tours - The Adventures Continue' })-[:in]->(ecl),
+      (tr_rt)<-[:is_a]-(stt)-[:features { frequency: 'high', intensity: 'medium' }]->(rg_rf),
     //-----Pixar Place----------------------------------------------------------
-      (dk_rt)<-[:is_a]-(:Ride { name: 'Toy Story Mania!' })-[:in]->(pxp),
+      (dk_rt)<-[:is_a]-(tsm:Ride:Interactive { name: 'Toy Story Mania!' })-[:in]->(pxp),
+      (gt_rt)<-[:is_a]-(tsm),
     //-----Sunset Boulevard-----------------------------------------------------
-      (rc_rt)<-[:is_a]-(:Ride { name: 'Rock \'n\' Roller Coaster Starring Aerosmith' })-[:in]->(ssb),
+      (rc_rt)<-[:is_a]-(rrc:Ride { name: 'Rock \'n\' Roller Coaster Starring Aerosmith' })-[:in]->(ssb),
+      (tr_rt)<-[:is_a]-(rrc)-[:features]->(dk_rf),
+      (sd_rf)<-[:features]-(rrc)-[:features]->(gf_rf),
+      (in_rf)<-[:features]-(rrc),
       (tr_rt)<-[:is_a]-(:Ride { name: 'The Twilight Zone Tower of Terror' })-[:in]->(ssb),
     //-----Toy Story Land-------------------------------------------------------
       (fl_rt)<-[:is_a]-(:Ride { name: 'Alien Swirling Saucers' })-[:in]->(tsl),
@@ -132,7 +136,8 @@ create
     //-----Tomorrowland---------------------------------------------------------
       (tr_rt)<-[:is_a]-(:Ride { name: 'Astro Orbiter' })-[:in]->(tl),
       (dk_rt)<-[:is_a]-(:Ride:Interactive { name: 'Buzz Lightyear\'s Space Ranger Spin' })-[:in]->(tl),
-      (rc_rt)<-[:is_a]-(:Ride { name: 'Space Mountain' })-[:in]->(tl),
+      (rc_rt)<-[:is_a]-(smt:Ride { name: 'Space Mountain' })-[:in]->(tl),
+      (tr_rt)<-[:is_a]-(smt)-[:features { frequency: 'high', intensity: 'high' }]->(dk_rf),
       (gt_rt)<-[:is_a]-(:Ride:Interactive { name: 'Tomorrowland Speedway' })-[:in]->(tl),
       (gt_rt)<-[:is_a]-(:Ride { name: 'Tomorrowland Transit Authority PeopleMover' })-[:in]->(tl),
       (dk_rt)<-[:is_a]-(:Ride:Show { name: 'Walt Disney\'s Carousel of Progress' })-[:in]->(tl);

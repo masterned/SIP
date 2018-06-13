@@ -55,7 +55,7 @@ create
   // (:Character { name: 'Darth Vader' })-[:in]->(t),
   // (:Character { name: 'Doc McStuffins' })-[:in]->(t),
   (dnd:Character { name: 'Donald Duck' })-[:in { meetable: true, as: 'The Astounding Donaldo', costume: 'snake charmer' }]->(pss),
-    (dnd)-[:in { meetable: true }]->(ddb)
+    (dnd)-[:in { meetable: true }]->(ddb),
   // (:Character { name: 'Divine' })-[:in]->(t),
   (:Character { name: 'Drizella' })-[:in { meetable: true }]->(cc),
   (:Character { name: 'Eeyore' })-[:in { meetable: true }]->(tcp),
@@ -113,5 +113,5 @@ create
   (:Character { name: 'Wendy' })-[:in { meetable: true }]->(ppf),
   (:Character { name: 'White Rabbit' })-[:in { meetable: true }]->(mtp),
   (wtp:Character { name: 'Winnie the Pooh' })-[:in { meetable: true }]->(tcp),
-    (wtp)-[:in { meetable: true }]->(maw),
+    (wtp)-[:in { meetable: true }]->(maw);
   // (:Character { name: 'Woody' })-[:in]->(t);
